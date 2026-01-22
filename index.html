@@ -1,1 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanishta Varman - Portfolio</title>
+    <style>
+        /* === RESET & BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFF9F5;
+            color: #5C4A4A;
+            line-height: 1.6;
+        }
+
+        /* === NAVIGATION BAR === */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(92, 74, 74, 0.08);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #5C4A4A;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        nav a:hover {
+            color: #D4A5A5;
+        }
+
+        /* === SECTION CONTAINER === */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* === HERO SECTION === */
+        #hero {
+            background: linear-gradient(135deg, #FFF9F5 0%, #F5E6E8 100%);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: #5C4A4A;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            color: #7D6666;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #D4A5A5;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 165, 165, 0.3);
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #C89494;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 165, 165, 0.4);
+        }
+
+        /* === ABOUT SECTION === */
+        #about {
+            background-color: #FFFEFE;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .profile-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #F5E6E8 0%, #D4A5A5 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(92, 74, 74, 0.12);
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #5C4A4A;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #6E5B5B;
+            margin-bottom: 1rem;
+        }
+
+        /* === PROJECTS SECTION === */
+        #projects {
+            background-color: #F5E6E8;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(92, 74, 74, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(92, 74, 74, 0.15);
+        }
+
+        .project-card h3 {
+            color: #5C4A4A;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #6E5B5B;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #D4A5A5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #C89494;
+        }
+
+        /* === CONTACT SECTION === */
+        #contact {
+            background-color: #FFFEFE;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background-color: #D4A5A5;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 165, 165, 0.3);
+        }
+
+        .contact-link:hover {
+            background-color: #C89494;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 165, 165, 0.4);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background-color: #5C4A4A;
+            color: #FFF9F5;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .profile-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Tanishta Varman</h1>
+            <p class="tagline">Welcome to my creative space ✨</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm Tanishta, and I'm passionate about creating beautiful and functional digital experiences.</p>
+                    <p>I believe in the power of design to make the world a better place. When I'm not coding, you can find me exploring new ideas, learning new skills, and enjoying creative projects.</p>
+                    <p>Let's create something amazing together!</p>
+                </div>
+                <div class="about-image">
+                    <div class="profile-placeholder">
+                        Your Photo Here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <h2 style="text-align: center;">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project One</h3>
+                    <p>A brief description of your first project. What did you build? What technologies did you use? What problem does it solve?</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Two</h3>
+                    <p>A brief description of your second project. Highlight the key features and what makes it special.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Three</h3>
+                    <p>A brief description of your third project. Share what you learned and what you're proud of.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact-content">
+            <h2>Let's Connect!</h2>
+            <p>I'd love to hear from you. Whether you have a question, want to collaborate, or just want to say hi, feel free to reach out!</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com" class="contact-link">📧 Email</a>
+                <a href="https://github.com/TanishtaVarman" class="contact-link" target="_blank">💻 GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Tanishta Varman. Made with 💗 and creativity.</p>
+    </footer>
+</body>
+</html>
