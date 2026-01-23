@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanishta Varman - Portfolio</title>
     <style>
- 
-          {
+        /* === RESET & BASE STYLES === */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -23,6 +23,7 @@
             line-height: 1.6;
         }
 
+        /* === NAVIGATION BAR === */
         nav {
             position: fixed;
             top: 0;
@@ -53,6 +54,7 @@
             color: #D4A574;
         }
 
+        /* === SECTION CONTAINER === */
         section {
             min-height: 100vh;
             padding: 6rem 2rem 4rem;
@@ -67,6 +69,7 @@
             width: 100%;
         }
 
+        /* === HERO SECTION === */
         #hero {
             background: linear-gradient(135deg, #F5EBD9 0%, #F0E5D3 100%);
             text-align: center;
@@ -105,6 +108,7 @@
             box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
         }
 
+        /* === ABOUT SECTION === */
         #about {
             background-color: #FFFCF7;
         }
@@ -153,13 +157,14 @@
             margin-bottom: 1rem;
         }
 
+        /* === PROJECTS SECTION === */
         #projects {
             background-color: #F0E5D3;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -170,6 +175,8 @@
             padding: 2rem;
             box-shadow: 0 5px 20px rgba(90, 74, 58, 0.1);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -186,6 +193,7 @@
         .project-card p {
             color: #6B5B4A;
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .project-link {
@@ -200,8 +208,76 @@
             color: #C89563;
         }
 
-        #contact {
+        /* === SKILLS & CERTIFICATIONS SECTION === */
+        #skills {
             background-color: #FFFCF7;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(90, 74, 58, 0.08);
+        }
+
+        .skill-category h3 {
+            color: #D4A574;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            color: #6B5B4A;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .certifications-list {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(90, 74, 58, 0.08);
+            margin-top: 3rem;
+        }
+
+        .certifications-list h3 {
+            color: #5A4A3A;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .certifications-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .certifications-list li {
+            color: #6B5B4A;
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .certifications-list li:before {
+            content: "✓";
+            color: #D4A574;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* === CONTACT SECTION === */
+        #contact {
+            background-color: #F0E5D3;
             text-align: center;
         }
 
@@ -238,6 +314,7 @@
             box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
         }
 
+        /* === FOOTER === */
         footer {
             background-color: #5A4A3A;
             color: #F5EBD9;
@@ -245,6 +322,7 @@
             padding: 2rem;
         }
 
+        /* === ANIMATIONS === */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -256,6 +334,7 @@
             }
         }
 
+        /* === RESPONSIVE DESIGN === */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -281,6 +360,14 @@
                 width: 250px;
                 height: 250px;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -291,6 +378,7 @@
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -299,7 +387,7 @@
     <section id="hero">
         <div class="hero-content">
             <h1>Tanishta Varman</h1>
-            <p class="tagline">Welcome to my creative space ✨</p>
+            <p class="tagline">Software Engineer | AI Developer | Problem Solver</p>
             <a href="#projects" class="cta-button">View My Work</a>
         </div>
     </section>
@@ -310,9 +398,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Me</h2>
-                    <p>Hello! I'm Tanishta, and I'm passionate about creating beautiful and functional digital experiences.</p>
-                    <p>I believe in the power of design to make the world a better place. When I'm not coding, you can find me exploring new ideas, learning new skills, and enjoying creative projects.</p>
-                    <p>Let's create something amazing together!</p>
+                    <p>Hello! I'm Tanishta, a Computer Science student at Sai University with a passion for building intelligent, user-focused applications. Currently, I'm working as a Software Engineer Intern at Prodpat, where I develop full-stack solutions and explore the intersection of AI and web development.</p>
+                    <p>My journey in tech spans machine learning, deep learning, and full-stack development. I love tackling complex problems—whether it's training neural networks for species classification, building secure chatbots with Claude API, or designing network security tools. I believe technology should be both powerful and accessible.</p>
+                    <p>When I'm not coding, you'll find me contributing to the Millennium Fellowship with the UN, designing for Zeitgeist Magazine, or exploring new frameworks and tools. I'm always eager to learn, collaborate, and create meaningful impact through technology.</p>
                 </div>
                 <div class="about-image">
                     <div class="profile-placeholder">
@@ -329,20 +417,81 @@
             <h2 style="text-align: center;">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Project One</h3>
-                    <p>A brief description of your first project. What did you build? What technologies did you use? What problem does it solve?</p>
-                    <a href="#" class="project-link">View Project →</a>
+                    <h3>Sage Bot - AI Chatbot</h3>
+                    <p>Full-stack intelligent chatbot powered by Claude Sonnet 4 API. Built with React, Node.js, and Firebase featuring JWT authentication, rate limiting, and secure RESTful architecture. Developed using Agile methodology with comprehensive error handling and session management.</p>
+                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub →</a>
                 </div>
                 <div class="project-card">
-                    <h3>Project Two</h3>
-                    <p>A brief description of your second project. Highlight the key features and what makes it special.</p>
-                    <a href="#" class="project-link">View Project →</a>
+                    <h3>Order - Forensic Workspace Management</h3>
+                    <p>Secure case management portal designed for forensic investigators. Features Firebase Authentication, real-time collaboration, protected routing, and optimized Firestore database for sensitive data storage with evidence tracking and file upload capabilities.</p>
+                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub →</a>
                 </div>
                 <div class="project-card">
-                    <h3>Project Three</h3>
-                    <p>A brief description of your third project. Share what you learned and what you're proud of.</p>
-                    <a href="#" class="project-link">View Project →</a>
+                    <h3>Advanced Port Scanner</h3>
+                    <p>Multi-threaded network security tool for TCP/UDP scanning with banner grabbing and service fingerprinting. Built for Linux environments (Kali) with real-time progress tracking and ethical usage guidelines for responsible penetration testing.</p>
+                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub →</a>
                 </div>
+                <div class="project-card">
+                    <h3>Felis Taxonomy Classifier</h3>
+                    <p>Deep learning species classification using transfer learning on InceptionV3, DenseNet121, and EfficientNetV2B0. Implemented optimized dropout rates and selective layer freezing, evaluated with confusion matrices and precision-recall metrics for improved accuracy.</p>
+                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Speech Recognition using CNN</h3>
+                    <p>Speaker identification system using Mel Frequency Cepstral Coefficients (MFCCs) for audio feature extraction. Compared CNN and RNN architectures in a collaborative 3-member team, managing dataset preparation and model training pipeline.</p>
+                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>Electrical Grid Stability Prediction</h3>
+                    <p>Supervised learning models (SVM, Random Forest, Gradient Boosting) to predict electrical grid stability. Applied hyperparameter tuning via 5-fold cross-validation and grid search with dimensionality reduction techniques (PCA, t-SNE) for feature visualization.</p>
+                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & CERTIFICATIONS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <h2 style="text-align: center;">Skills & Credentials</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <p>Python, C, C++, JavaScript, SQL, HTML, CSS, Node.js</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <p>React.js, Express.js, TensorFlow, Firebase, Scikit-Learn, NumPy, Pandas, Matplotlib</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <p>Git/GitHub, Vite, Google Colab, Wireshark, Microsoft Office</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Development Practices</h3>
+                    <p>Agile/SDLC, Git workflows, RESTful architecture, API security, Socket Programming</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Specializations</h3>
+                    <p>Machine Learning, Deep Learning, Transfer Learning, Network Security, API Integration</p>
+                </div>
+            </div>
+
+            <div class="certifications-list">
+                <h3>Certifications & Achievements</h3>
+                <ul>
+                    <li>Machine Learning Specialization - Stanford University/DeepLearning.AI</li>
+                    <li>Generative AI Fundamentals - LinkedIn Learning</li>
+                    <li>Cybersecurity Fundamentals - Acmegrade</li>
+                    <li>Millennium Fellow - United Nations Academic Impact 2024</li>
+                    <li>Design Assistant - Zeitgeist Magazine 2024</li>
+                    <li>E-Yantra Robotics Competition - Participant 2023</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -351,11 +500,11 @@
     <section id="contact">
         <div class="contact-content">
             <h2>Let's Connect!</h2>
-            <p>I'd love to hear from you. Whether you have a question, want to collaborate, or just want to say hi, feel free to reach out!</p>
+            <p>I'd love to connect! Whether you have a project in mind, want to collaborate, or just want to chat about tech, feel free to reach out.</p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">📧 Email</a>
+                <a href="mailto:tanishta.varman@gmail.com" class="contact-link">📧 Email</a>
                 <a href="https://github.com/TanishtaVarman" class="contact-link" target="_blank">💻 GitHub</a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">💼 LinkedIn</a>
+                <a href="https://linkedin.com/in/tanishta-varman" class="contact-link" target="_blank">💼 LinkedIn</a>
             </div>
         </div>
     </section>
