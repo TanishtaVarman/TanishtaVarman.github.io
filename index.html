@@ -13,12 +13,12 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #E8F3E8;
-            color: #3A4A3A;
-            line-height: 1.6;
+            background-color: #F7E8E8;
+            color: #4A3838;
+            overflow-x: hidden;
         }
 
-        /* === HERO SECTION === */
+        /* === HERO === */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -30,175 +30,159 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
-            color: #2D3D2D;
+            font-size: 4.5rem;
+            color: #3D2D2D;
             margin-bottom: 1rem;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            color: #5A6A5A;
+            font-size: 1.4rem;
+            color: #6A5050;
             font-weight: 300;
         }
 
-        /* === CONTENT SECTIONS === */
-        .content-section {
-            max-width: 1400px;
+        /* === SCATTERED LAYOUT === */
+        .scattered-container {
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        .item {
+            position: relative;
+            margin-bottom: 4rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover {
+            transform: scale(1.02);
+        }
+
+        .item img,
+        .item .image-placeholder {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(74, 56, 56, 0.12);
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #F0D9D9 0%, #E8C8C8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8A6A6A;
+            font-size: 1.2rem;
+            min-height: 300px;
+        }
+
+        .item-label {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #6A5050;
+            font-weight: 400;
+        }
+
+        /* Different widths for variety */
+        .small { max-width: 350px; }
+        .medium { max-width: 500px; }
+        .large { max-width: 700px; }
+        .xlarge { max-width: 900px; }
+
+        /* Scattered positioning */
+        .row {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .offset-right {
+            margin-left: auto;
+            margin-right: 5%;
+        }
+
+        .offset-left {
+            margin-left: 5%;
+            margin-right: auto;
+        }
+
+        .center {
+            margin: 0 auto;
+        }
+
+        /* === SKILLS SECTION === */
+        .skills-section {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            color: #2D3D2D;
+            font-size: 3rem;
+            color: #3D2D2D;
             margin-bottom: 3rem;
             font-weight: 300;
             text-align: center;
         }
 
-        /* === MASONRY LAYOUT === */
-        .masonry-grid {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        .grid-item {
+        .skill-box {
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(42, 74, 42, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .grid-item:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Different sizes for variety */
-        .grid-item.large {
-            grid-column: span 2;
-        }
-
-        .grid-item.tall {
-            grid-row: span 2;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #D4E7D4 0%, #C5DCC5 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6A8A6A;
-            font-size: 1.1rem;
-        }
-
-        .grid-item.large .image-placeholder {
-            height: 400px;
-        }
-
-        .grid-item.tall .image-placeholder {
-            height: 500px;
-        }
-
-        .item-content {
             padding: 2rem;
-        }
-
-        .item-content h3 {
-            font-size: 1.5rem;
-            color: #2D3D2D;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .item-content p {
-            color: #5A6A5A;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        /* === ABOUT SECTION === */
-        .about-grid {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 5rem;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-image .image-placeholder {
-            height: 450px;
             border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(74, 56, 56, 0.08);
         }
 
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        /* === SKILLS SECTION === */
-        .skills-list {
-            background: white;
-            border-radius: 12px;
-            padding: 3rem;
-            box-shadow: 0 4px 20px rgba(42, 74, 42, 0.08);
-            margin-bottom: 3rem;
-        }
-
-        .skills-category {
-            margin-bottom: 2rem;
-        }
-
-        .skills-category h4 {
-            color: #4A6A4A;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        .skill-box h4 {
+            color: #8A6A6A;
+            margin-bottom: 0.8rem;
             font-weight: 500;
         }
 
-        .skills-category p {
-            color: #5A6A5A;
+        .skill-box p {
+            color: #6A5050;
             line-height: 1.8;
         }
 
-        .certifications {
+        .cert-box {
             background: white;
-            border-radius: 12px;
             padding: 3rem;
-            box-shadow: 0 4px 20px rgba(42, 74, 42, 0.08);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(74, 56, 56, 0.08);
         }
 
-        .certifications ul {
+        .cert-box ul {
             list-style: none;
         }
 
-        .certifications li {
-            color: #5A6A5A;
+        .cert-box li {
+            color: #6A5050;
             padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
 
-        .certifications li:before {
+        .cert-box li:before {
             content: "✓";
-            color: #6A8A6A;
+            color: #C89494;
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
-        /* === CONTACT SECTION === */
-        .contact-section {
+        /* === CONTACT === */
+        .contact {
             text-align: center;
             padding: 5rem 2rem;
         }
@@ -212,17 +196,16 @@
         }
 
         .contact-link {
-            padding: 1rem 2rem;
-            background: #6A8A6A;
+            padding: 1rem 2.5rem;
+            background: #C89494;
             color: white;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            font-weight: 500;
         }
 
         .contact-link:hover {
-            background: #5A7A5A;
+            background: #B88484;
             transform: translateY(-3px);
         }
 
@@ -231,19 +214,13 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-
-            .about-grid {
-                flex-direction: column;
+            
+            .small, .medium, .large, .xlarge {
+                max-width: 100%;
             }
 
-            .masonry-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-item.large,
-            .grid-item.tall {
-                grid-column: span 1;
-                grid-row: span 1;
+            .offset-right, .offset-left {
+                margin: 0 auto;
             }
         }
     </style>
@@ -255,110 +232,102 @@
         <p>Computer Science Student · Learning & Building</p>
     </section>
 
-    <!-- ABOUT -->
-    <section class="content-section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-            <div class="about-image">
-                <div class="image-placeholder">Your Photo Here</div>
-            </div>
-            <div class="about-text">
-                <p>Hello! I'm Tanishta, a Computer Science student at Sai University with a passion for building intelligent, user-focused applications. Currently, I'm working as a Software Engineer Intern at Prodpat, where I develop full-stack solutions and explore the intersection of AI and web development.</p>
-                <p>My journey in tech spans machine learning, deep learning, and full-stack development. I love tackling complex problems—whether it's training neural networks for species classification, building secure chatbots with Claude API, or designing network security tools.</p>
-                <p>When I'm not coding, you'll find me contributing to the Millennium Fellowship with the UN, designing for Zeitgeist Magazine, or exploring new frameworks and tools.</p>
+    <!-- SCATTERED CONTENT -->
+    <div class="scattered-container">
+        
+        <!-- About Me Image (clickable) -->
+        <div class="row">
+            <div class="item large offset-left">
+                <div class="image-placeholder" style="min-height: 450px;">About Me Image</div>
+                <p class="item-label">About</p>
             </div>
         </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section class="content-section">
-        <h2 class="section-title">Projects</h2>
-        <div class="masonry-grid">
-            <div class="grid-item large">
-                <div class="image-placeholder">Project Image</div>
-                <div class="item-content">
-                    <h3>Sage Bot - AI Chatbot</h3>
-                    <p>Full-stack intelligent chatbot powered by Claude Sonnet 4 API. Built with React, Node.js, and Firebase featuring JWT authentication, rate limiting, and secure RESTful architecture.</p>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="image-placeholder">Project Image</div>
-                <div class="item-content">
-                    <h3>Order - Forensic System</h3>
-                    <p>Secure case management portal for forensic investigators with Firebase Authentication and real-time collaboration.</p>
-                </div>
-            </div>
-
-            <div class="grid-item tall">
-                <div class="image-placeholder">Project Image</div>
-                <div class="item-content">
-                    <h3>Advanced Port Scanner</h3>
-                    <p>Multi-threaded network security tool for TCP/UDP scanning with banner grabbing and service fingerprinting.</p>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="image-placeholder">Project Image</div>
-                <div class="item-content">
-                    <h3>Felis Taxonomy Classifier</h3>
-                    <p>Deep learning species classification using transfer learning on InceptionV3, DenseNet121, and EfficientNetV2B0.</p>
-                </div>
-            </div>
-
-            <div class="grid-item large">
-                <div class="image-placeholder">Project Image</div>
-                <div class="item-content">
-                    <h3>Speech Recognition CNN</h3>
-                    <p>Speaker identification system using Mel Frequency Cepstral Coefficients (MFCCs) for audio feature extraction.</p>
-                </div>
+        <!-- Projects - Scattered -->
+        <div class="row">
+            <div class="item medium offset-right">
+                <div class="image-placeholder" style="min-height: 320px;">Sage Bot</div>
+                <p class="item-label">Sage Bot - AI Chatbot</p>
             </div>
         </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="content-section">
+        <div class="row">
+            <div class="item small offset-left">
+                <div class="image-placeholder" style="min-height: 280px;">Order</div>
+                <p class="item-label">Order - Forensic System</p>
+            </div>
+            
+            <div class="item xlarge" style="margin-left: 2rem;">
+                <div class="image-placeholder" style="min-height: 380px;">Port Scanner</div>
+                <p class="item-label">Advanced Port Scanner</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="item medium center">
+                <div class="image-placeholder" style="min-height: 340px;">Felis Classifier</div>
+                <p class="item-label">Felis Taxonomy Classifier</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="item large offset-right">
+                <div class="image-placeholder" style="min-height: 400px;">Speech Recognition</div>
+                <p class="item-label">Speech Recognition CNN</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="item small offset-left" style="margin-top: -2rem;">
+                <div class="image-placeholder" style="min-height: 260px;">Grid Prediction</div>
+                <p class="item-label">Electrical Grid Stability</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SKILLS & CERTIFICATIONS -->
+    <section class="skills-section">
         <h2 class="section-title">Skills & Certifications</h2>
         
-        <div class="skills-list">
-            <div class="skills-category">
+        <div class="skills-grid">
+            <div class="skill-box">
                 <h4>Languages</h4>
                 <p>Python, C, C++, JavaScript, SQL, HTML, CSS, Node.js</p>
             </div>
             
-            <div class="skills-category">
-                <h4>Frameworks & Libraries</h4>
-                <p>React.js, Express.js, TensorFlow, Firebase, Scikit-Learn, NumPy, Pandas, Matplotlib</p>
+            <div class="skill-box">
+                <h4>Frameworks</h4>
+                <p>React.js, Express.js, TensorFlow, Firebase, Scikit-Learn</p>
             </div>
             
-            <div class="skills-category">
-                <h4>Tools & Platforms</h4>
-                <p>Git/GitHub, Vite, Google Colab, Wireshark, Microsoft Office</p>
+            <div class="skill-box">
+                <h4>Tools</h4>
+                <p>Git/GitHub, Vite, Google Colab, Wireshark</p>
             </div>
             
-            <div class="skills-category">
+            <div class="skill-box">
                 <h4>Specializations</h4>
-                <p>Machine Learning, Deep Learning, Transfer Learning, Network Security, API Integration</p>
+                <p>Machine Learning, Deep Learning, Network Security, API Integration</p>
             </div>
         </div>
 
-        <div class="certifications">
-            <h3 style="margin-bottom: 1.5rem; color: #2D3D2D;">Certifications & Achievements</h3>
+        <div class="cert-box">
+            <h3 style="margin-bottom: 1.5rem; color: #3D2D2D; font-weight: 400;">Achievements</h3>
             <ul>
-                <li>Machine Learning Specialization - Stanford University/DeepLearning.AI</li>
+                <li>Machine Learning Specialization - Stanford/DeepLearning.AI</li>
                 <li>Generative AI Fundamentals - LinkedIn Learning</li>
                 <li>Cybersecurity Fundamentals - Acmegrade</li>
-                <li>Millennium Fellow - United Nations Academic Impact 2024</li>
+                <li>Millennium Fellow - UN Academic Impact 2024</li>
                 <li>Design Assistant - Zeitgeist Magazine 2024</li>
-                <li>E-Yantra Robotics Competition - Participant 2023</li>
+                <li>E-Yantra Robotics Competition 2023</li>
             </ul>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="contact-section">
+    <section class="contact">
         <h2 class="section-title">Let's Connect</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem; color: #5A6A5A;">Whether you have a project in mind or just want to chat about tech, feel free to reach out!</p>
         <div class="contact-links">
             <a href="mailto:tanishta.varman@gmail.com" class="contact-link">📧 Email</a>
             <a href="https://github.com/TanishtaVarman" class="contact-link" target="_blank">💻 GitHub</a>
@@ -366,7 +335,7 @@
         </div>
     </section>
 
-    <footer style="background: #D4E7D4; padding: 2rem; text-align: center; color: #3A4A3A;">
+    <footer style="background: #F0D9D9; padding: 2rem; text-align: center; color: #4A3838;">
         <p>&copy; 2026 Tanishta Varman</p>
     </footer>
 </body>
