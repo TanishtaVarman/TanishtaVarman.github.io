@@ -3,181 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanishta Varman - Portfolio</title>
+    <title>Tanishta Varman</title>
     <style>
-        /* === RESET & BASE STYLES === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #F2E8DA 0%, #E8D5C4 50%, #F2E8DA 100%);
-            color: #4A3D32;
+            background-color: #E8F3E8;
+            color: #3A4A3A;
             line-height: 1.6;
         }
 
-        /* === NAVIGATION BAR === */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: linear-gradient(135deg, rgba(255, 248, 239, 0.98) 0%, rgba(248, 240, 230, 0.98) 100%);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(200, 135, 109, 0.15);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4A3D32;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #D89B7C, #C8876D);
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #C8876D;
-        }
-
-        nav a:hover::after {
-            width: 80%;
-        }
-
-        /* === SECTION CONTAINER === */
-        section {
+        /* === HERO SECTION === */
+        .hero {
             min-height: 100vh;
-            padding: 6rem 2rem 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        /* === HERO SECTION === */
-        #hero {
-            background: linear-gradient(135deg, #FFF8EF 0%, #F2E8DA 30%, #E8CBAF 70%, #F2E8DA 100%);
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 2rem;
         }
 
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(216, 155, 124, 0.1) 0%, transparent 70%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-30px, 30px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #4A3D32 0%, #6B5547 50%, #4A3D32 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero h1 {
+            font-size: 4rem;
+            color: #2D3D2D;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
-        .hero-content .tagline {
-            font-size: 1.5rem;
-            color: #7A6456;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1.2s ease;
+        .hero p {
+            font-size: 1.3rem;
+            color: #5A6A5A;
+            font-weight: 300;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, #D89B7C 0%, #C8876D 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(216, 155, 124, 0.4);
-            animation: fadeInUp 1.4s ease;
-            position: relative;
+        /* === CONTENT SECTIONS === */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #2D3D2D;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        /* === MASONRY LAYOUT === */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid-item {
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(42, 74, 42, 0.08);
+            transition: transform 0.3s ease;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Different sizes for variety */
+        .grid-item.large {
+            grid-column: span 2;
+        }
+
+        .grid-item.tall {
+            grid-row: span 2;
+        }
+
+        .image-placeholder {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
+            height: 300px;
+            background: linear-gradient(135deg, #D4E7D4 0%, #C5DCC5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6A8A6A;
+            font-size: 1.1rem;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
+        .grid-item.large .image-placeholder {
+            height: 400px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(216, 155, 124, 0.5);
+        .grid-item.tall .image-placeholder {
+            height: 500px;
+        }
+
+        .item-content {
+            padding: 2rem;
+        }
+
+        .item-content h3 {
+            font-size: 1.5rem;
+            color: #2D3D2D;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .item-content p {
+            color: #5A6A5A;
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
         /* === ABOUT SECTION === */
-        #about {
-            background: linear-gradient(135deg, #FFFCF8 0%, #FFF8EF 50%, #FFFCF8 100%);
-        }
-
-        .about-content {
+        .about-grid {
             display: flex;
             gap: 3rem;
             align-items: center;
-            flex-wrap: wrap;
+            margin-bottom: 5rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image .image-placeholder {
+            height: 450px;
+            border-radius: 12px;
         }
 
         .about-text {
@@ -185,473 +146,228 @@
             min-width: 300px;
         }
 
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
+        /* === SKILLS SECTION === */
+        .skills-list {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(42, 74, 42, 0.08);
+            margin-bottom: 3rem;
         }
 
-        .profile-placeholder {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #E8CBAF 0%, #D89B7C 50%, #C8876D 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category h4 {
+            color: #4A6A4A;
             font-size: 1.2rem;
-            box-shadow: 0 10px 40px rgba(200, 135, 109, 0.3);
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
-        .profile-placeholder::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-            animation: rotate 15s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #4A3D32 0%, #7A6456 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #5C4F43;
-            margin-bottom: 1rem;
-        }
-
-        /* === PROJECTS SECTION === */
-        #projects {
-            background: linear-gradient(135deg, #F2E8DA 0%, #E8CBAF 30%, #F2E8DA 70%, #FFF8EF 100%);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 5px 30px rgba(200, 135, 109, 0.15);
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #D89B7C, #C8876D, #D89B7C);
-            background-size: 200% 100%;
-            animation: shimmer 3s ease infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(200, 135, 109, 0.25);
-        }
-
-        .project-card h3 {
-            color: #4A3D32;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-card p {
-            color: #5C4F43;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: #C8876D;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-link::after {
-            content: '→';
-            margin-left: 0.5rem;
-            transition: margin-left 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: #B07757;
-        }
-
-        .project-link:hover::after {
-            margin-left: 1rem;
-        }
-
-        /* === SKILLS & CERTIFICATIONS SECTION === */
-        #skills {
-            background: linear-gradient(135deg, #FFFCF8 0%, #FFF8EF 50%, #FFFCF8 100%);
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skill-category {
-            background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%);
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 25px rgba(200, 135, 109, 0.12);
-            border-left: 4px solid;
-            border-image: linear-gradient(180deg, #D89B7C, #C8876D) 1;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateX(5px);
-        }
-
-        .skill-category h3 {
-            background: linear-gradient(135deg, #D89B7C 0%, #C8876D 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .skill-category p {
-            color: #5C4F43;
-            font-size: 1rem;
+        .skills-category p {
+            color: #5A6A5A;
             line-height: 1.8;
         }
 
-        .certifications-list {
-            background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 8px 35px rgba(200, 135, 109, 0.15);
-            margin-top: 3rem;
+        .certifications {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(42, 74, 42, 0.08);
         }
 
-        .certifications-list h3 {
-            color: #4A3D32;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .certifications-list ul {
+        .certifications ul {
             list-style: none;
-            padding: 0;
         }
 
-        .certifications-list li {
-            color: #5C4F43;
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
+        .certifications li {
+            color: #5A6A5A;
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
 
-        .certifications-list li:before {
+        .certifications li:before {
             content: "✓";
-            color: #C8876D;
-            font-weight: bold;
+            color: #6A8A6A;
             position: absolute;
             left: 0;
+            font-weight: bold;
         }
 
         /* === CONTACT SECTION === */
-        #contact {
-            background: linear-gradient(135deg, #F2E8DA 0%, #E8CBAF 30%, #F2E8DA 70%, #FFF8EF 100%);
+        .contact-section {
             text-align: center;
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
+            padding: 5rem 2rem;
         }
 
         .contact-links {
             display: flex;
-            justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
             padding: 1rem 2rem;
-            background: linear-gradient(135deg, #D89B7C 0%, #C8876D 100%);
+            background: #6A8A6A;
             color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(216, 155, 124, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-link::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.5s ease, height 0.5s ease;
-        }
-
-        .contact-link:hover::before {
-            width: 300px;
-            height: 300px;
+            font-weight: 500;
         }
 
         .contact-link:hover {
+            background: #5A7A5A;
             transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(216, 155, 124, 0.4);
         }
 
-        /* === FOOTER === */
-        footer {
-            background: linear-gradient(135deg, #4A3D32 0%, #3A2F26 100%);
-            color: #F2E8DA;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* === ANIMATIONS === */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* === RESPONSIVE DESIGN === */
+        /* === RESPONSIVE === */
         @media (max-width: 768px) {
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-content .tagline {
-                font-size: 1.2rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .about-content {
+            .about-grid {
                 flex-direction: column;
             }
 
-            .profile-placeholder {
-                width: 250px;
-                height: 250px;
-            }
-
-            .projects-grid {
+            .masonry-grid {
                 grid-template-columns: 1fr;
             }
 
-            .skills-container {
-                grid-template-columns: 1fr;
+            .grid-item.large,
+            .grid-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
             }
         }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <nav>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Tanishta Varman</h1>
-            <p class="tagline">Software Engineer | AI Developer | Problem Solver</p>
-            <a href="#projects" class="cta-button">View My Work</a>
-        </div>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Tanishta Varman</h1>
+        <p>Computer Science Student · Learning & Building</p>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>Hello! I'm Tanishta, a Computer Science student at Sai University with a passion for building intelligent, user-focused applications. Currently, I'm working as a Software Engineer Intern at Prodpat, where I develop full-stack solutions and explore the intersection of AI and web development.</p>
-                    <p>My journey in tech spans machine learning, deep learning, and full-stack development. I love tackling complex problems—whether it's training neural networks for species classification, building secure chatbots with Claude API, or designing network security tools. I believe technology should be both powerful and accessible.</p>
-                    <p>When I'm not coding, you'll find me contributing to the Millennium Fellowship with the UN, designing for Zeitgeist Magazine, or exploring new frameworks and tools. I'm always eager to learn, collaborate, and create meaningful impact through technology.</p>
-                </div>
-                <div class="about-image">
-                    <div class="profile-placeholder">
-                        Your Photo Here
-                    </div>
-                </div>
+    <!-- ABOUT -->
+    <section class="content-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-image">
+                <div class="image-placeholder">Your Photo Here</div>
+            </div>
+            <div class="about-text">
+                <p>Hello! I'm Tanishta, a Computer Science student at Sai University with a passion for building intelligent, user-focused applications. Currently, I'm working as a Software Engineer Intern at Prodpat, where I develop full-stack solutions and explore the intersection of AI and web development.</p>
+                <p>My journey in tech spans machine learning, deep learning, and full-stack development. I love tackling complex problems—whether it's training neural networks for species classification, building secure chatbots with Claude API, or designing network security tools.</p>
+                <p>When I'm not coding, you'll find me contributing to the Millennium Fellowship with the UN, designing for Zeitgeist Magazine, or exploring new frameworks and tools.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-        <div class="container">
-            <h2 style="text-align: center;">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
+    <!-- PROJECTS -->
+    <section class="content-section">
+        <h2 class="section-title">Projects</h2>
+        <div class="masonry-grid">
+            <div class="grid-item large">
+                <div class="image-placeholder">Project Image</div>
+                <div class="item-content">
                     <h3>Sage Bot - AI Chatbot</h3>
-                    <p>Full-stack intelligent chatbot powered by Claude Sonnet 4 API. Built with React, Node.js, and Firebase featuring JWT authentication, rate limiting, and secure RESTful architecture. Developed using Agile methodology with comprehensive error handling and session management.</p>
-                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub</a>
+                    <p>Full-stack intelligent chatbot powered by Claude Sonnet 4 API. Built with React, Node.js, and Firebase featuring JWT authentication, rate limiting, and secure RESTful architecture.</p>
                 </div>
-                <div class="project-card">
-                    <h3>Order - Forensic Workspace Management</h3>
-                    <p>Secure case management portal designed for forensic investigators. Features Firebase Authentication, real-time collaboration, protected routing, and optimized Firestore database for sensitive data storage with evidence tracking and file upload capabilities.</p>
-                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub</a>
+            </div>
+
+            <div class="grid-item">
+                <div class="image-placeholder">Project Image</div>
+                <div class="item-content">
+                    <h3>Order - Forensic System</h3>
+                    <p>Secure case management portal for forensic investigators with Firebase Authentication and real-time collaboration.</p>
                 </div>
-                <div class="project-card">
+            </div>
+
+            <div class="grid-item tall">
+                <div class="image-placeholder">Project Image</div>
+                <div class="item-content">
                     <h3>Advanced Port Scanner</h3>
-                    <p>Multi-threaded network security tool for TCP/UDP scanning with banner grabbing and service fingerprinting. Built for Linux environments (Kali) with real-time progress tracking and ethical usage guidelines for responsible penetration testing.</p>
-                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub</a>
+                    <p>Multi-threaded network security tool for TCP/UDP scanning with banner grabbing and service fingerprinting.</p>
                 </div>
-                <div class="project-card">
+            </div>
+
+            <div class="grid-item">
+                <div class="image-placeholder">Project Image</div>
+                <div class="item-content">
                     <h3>Felis Taxonomy Classifier</h3>
-                    <p>Deep learning species classification using transfer learning on InceptionV3, DenseNet121, and EfficientNetV2B0. Implemented optimized dropout rates and selective layer freezing, evaluated with confusion matrices and precision-recall metrics for improved accuracy.</p>
-                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub</a>
+                    <p>Deep learning species classification using transfer learning on InceptionV3, DenseNet121, and EfficientNetV2B0.</p>
                 </div>
-                <div class="project-card">
-                    <h3>Speech Recognition using CNN</h3>
-                    <p>Speaker identification system using Mel Frequency Cepstral Coefficients (MFCCs) for audio feature extraction. Compared CNN and RNN architectures in a collaborative 3-member team, managing dataset preparation and model training pipeline.</p>
-                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub</a>
-                </div>
-                <div class="project-card">
-                    <h3>Electrical Grid Stability Prediction</h3>
-                    <p>Supervised learning models (SVM, Random Forest, Gradient Boosting) to predict electrical grid stability. Applied hyperparameter tuning via 5-fold cross-validation and grid search with dimensionality reduction techniques (PCA, t-SNE) for feature visualization.</p>
-                    <a href="https://github.com/TanishtaVarman" class="project-link" target="_blank">View on GitHub</a>
+            </div>
+
+            <div class="grid-item large">
+                <div class="image-placeholder">Project Image</div>
+                <div class="item-content">
+                    <h3>Speech Recognition CNN</h3>
+                    <p>Speaker identification system using Mel Frequency Cepstral Coefficients (MFCCs) for audio feature extraction.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SKILLS & CERTIFICATIONS SECTION -->
-    <section id="skills">
-        <div class="container">
-            <h2 style="text-align: center;">Skills & Credentials</h2>
+    <!-- SKILLS -->
+    <section class="content-section">
+        <h2 class="section-title">Skills & Certifications</h2>
+        
+        <div class="skills-list">
+            <div class="skills-category">
+                <h4>Languages</h4>
+                <p>Python, C, C++, JavaScript, SQL, HTML, CSS, Node.js</p>
+            </div>
             
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <p>Python, C, C++, JavaScript, SQL, HTML, CSS, Node.js</p>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
-                    <p>React.js, Express.js, TensorFlow, Firebase, Scikit-Learn, NumPy, Pandas, Matplotlib</p>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <p>Git/GitHub, Vite, Google Colab, Wireshark, Microsoft Office</p>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Development Practices</h3>
-                    <p>Agile/SDLC, Git workflows, RESTful architecture, API security, Socket Programming</p>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Specializations</h3>
-                    <p>Machine Learning, Deep Learning, Transfer Learning, Network Security, API Integration</p>
-                </div>
+            <div class="skills-category">
+                <h4>Frameworks & Libraries</h4>
+                <p>React.js, Express.js, TensorFlow, Firebase, Scikit-Learn, NumPy, Pandas, Matplotlib</p>
             </div>
+            
+            <div class="skills-category">
+                <h4>Tools & Platforms</h4>
+                <p>Git/GitHub, Vite, Google Colab, Wireshark, Microsoft Office</p>
+            </div>
+            
+            <div class="skills-category">
+                <h4>Specializations</h4>
+                <p>Machine Learning, Deep Learning, Transfer Learning, Network Security, API Integration</p>
+            </div>
+        </div>
 
-            <div class="certifications-list">
-                <h3>Certifications & Achievements</h3>
-                <ul>
-                    <li>Machine Learning Specialization - Stanford University/DeepLearning.AI</li>
-                    <li>Generative AI Fundamentals - LinkedIn Learning</li>
-                    <li>Cybersecurity Fundamentals - Acmegrade</li>
-                    <li>Millennium Fellow - United Nations Academic Impact 2024</li>
-                    <li>Design Assistant - Zeitgeist Magazine 2024</li>
-                    <li>E-Yantra Robotics Competition - Participant 2023</li>
-                </ul>
-            </div>
+        <div class="certifications">
+            <h3 style="margin-bottom: 1.5rem; color: #2D3D2D;">Certifications & Achievements</h3>
+            <ul>
+                <li>Machine Learning Specialization - Stanford University/DeepLearning.AI</li>
+                <li>Generative AI Fundamentals - LinkedIn Learning</li>
+                <li>Cybersecurity Fundamentals - Acmegrade</li>
+                <li>Millennium Fellow - United Nations Academic Impact 2024</li>
+                <li>Design Assistant - Zeitgeist Magazine 2024</li>
+                <li>E-Yantra Robotics Competition - Participant 2023</li>
+            </ul>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <div class="contact-content">
-            <h2>Let's Connect!</h2>
-            <p>I'd love to connect! Whether you have a project in mind, want to collaborate, or just want to chat about tech, feel free to reach out.</p>
-            <div class="contact-links">
-                <a href="mailto:tanishta.varman@gmail.com" class="contact-link">📧 Email</a>
-                <a href="https://github.com/TanishtaVarman" class="contact-link" target="_blank">💻 GitHub</a>
-                <a href="https://linkedin.com/in/tanishta-varman" class="contact-link" target="_blank">💼 LinkedIn</a>
-            </div>
+    <!-- CONTACT -->
+    <section class="contact-section">
+        <h2 class="section-title">Let's Connect</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: #5A6A5A;">Whether you have a project in mind or just want to chat about tech, feel free to reach out!</p>
+        <div class="contact-links">
+            <a href="mailto:tanishta.varman@gmail.com" class="contact-link">📧 Email</a>
+            <a href="https://github.com/TanishtaVarman" class="contact-link" target="_blank">💻 GitHub</a>
+            <a href="https://linkedin.com/in/tanishta-varman" class="contact-link" target="_blank">💼 LinkedIn</a>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Tanishta Varman. Made with 🧡 and creativity.</p>
+    <footer style="background: #D4E7D4; padding: 2rem; text-align: center; color: #3A4A3A;">
+        <p>&copy; 2026 Tanishta Varman</p>
     </footer>
 </body>
 </html>
