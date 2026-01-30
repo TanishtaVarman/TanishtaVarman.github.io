@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Tanishta Varman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #F5EDE4;
+            color: #3D3226;
+            line-height: 1.8;
+        }
+
+        /* === HEADER === */
+        .header {
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #2D2519;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            color: #5D4E3E;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #B89968;
+        }
+
+        /* === CONTENT === */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: #2D2519;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .about-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(61, 50, 38, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .about-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #B89968;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .about-section p {
+            color: #5D4E3E;
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-section ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .about-section li {
+            color: #5D4E3E;
+            padding: 0.5rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .about-section li:before {
+            content: "→";
+            color: #B89968;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .about-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Tanishta Varman</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <div class="content">
+        <h1 class="page-title">About Me</h1>
+
+        <div class="about-section">
+            <h2>Hello! I'm Tanishta</h2>
+            <p>
+                I'm a Computer Science student passionate about leveraging technology to solve real-world problems. 
+                My journey in tech is driven by curiosity and a desire to create meaningful impact through code.
+            </p>
+            <p>
+                Currently, I'm exploring the intersection of machine learning, cybersecurity, and full-stack development. 
+                I believe in continuous learning and pushing the boundaries of what's possible with technology.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>What I Do</h2>
+            <ul>
+                <li>Build AI-powered applications using machine learning and deep learning</li>
+                <li>Develop full-stack web applications with modern frameworks</li>
+                <li>Explore network security and cybersecurity fundamentals</li>
+                <li>Create intuitive user interfaces with React and modern CSS</li>
+                <li>Work on data-driven projects using Python and TensorFlow</li>
+            </ul>
+        </div>
+
+        <div class="about-section">
+            <h2>Beyond Code</h2>
+            <p>
+                When I'm not coding, you'll find me contributing to community initiatives as a Millennium Fellow 
+                with UN Academic Impact, or working on creative design projects. I'm also passionate about 
+                making technology more accessible and sharing knowledge with others.
+            </p>
+            <p>
+                I'm always open to collaborating on interesting projects and connecting with fellow tech enthusiasts. 
+                Feel free to reach out!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
