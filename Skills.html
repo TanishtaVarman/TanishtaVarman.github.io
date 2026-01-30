@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Certifications - Tanishta Varman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #F5EDE4;
+            color: #3D3226;
+            line-height: 1.8;
+        }
+
+        /* === HEADER === */
+        .header {
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #2D2519;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            color: #5D4E3E;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #B89968;
+        }
+
+        /* === CONTENT === */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: #2D2519;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #5D4E3E;
+            font-size: 1.1rem;
+            margin-bottom: 5rem;
+            font-weight: 300;
+        }
+
+        /* === SKILLS SECTION === */
+        .section-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: #2D2519;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .skill-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(61, 50, 38, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(61, 50, 38, 0.12);
+        }
+
+        .skill-box h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #B89968;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .skill-box p {
+            color: #5D4E3E;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* === CERTIFICATIONS === */
+        .cert-container {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(61, 50, 38, 0.08);
+        }
+
+        .cert-container h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #2D2519;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            padding: 1.5rem;
+            background: #F9F5F0;
+            border-radius: 8px;
+            border-left: 4px solid #B89968;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            background: #F5EDE4;
+            transform: translateX(5px);
+        }
+
+        .cert-title {
+            color: #2D2519;
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            color: #7D6E5D;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .section-heading {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-container {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Tanishta Varman</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <div class="content">
+        <h1 class="page-title">Skills & Certifications</h1>
+        <p class="page-subtitle">Technical expertise and professional development</p>
+
+        <!-- SKILLS -->
+        <h2 class="section-heading">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <h4>Languages</h4>
+                <p>Python, C, C++, JavaScript, SQL, HTML, CSS, Node.js</p>
+            </div>
+            
+            <div class="skill-box">
+                <h4>Frameworks</h4>
+                <p>React.js, Express.js, TensorFlow, Firebase, Scikit-Learn</p>
+            </div>
+            
+            <div class="skill-box">
+                <h4>Tools</h4>
+                <p>Git/GitHub, Vite, Google Colab, Wireshark</p>
+            </div>
+            
+            <div class="skill-box">
+                <h4>Specializations</h4>
+                <p>Machine Learning, Deep Learning, Network Security, API Integration</p>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+        <h2 class="section-heading">Certifications & Achievements</h2>
+        <div class="cert-container">
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <div class="cert-title">Machine Learning Specialization</div>
+                    <div class="cert-issuer">Stanford University / DeepLearning.AI</div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Generative AI Fundamentals</div>
+                    <div class="cert-issuer">LinkedIn Learning</div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Cybersecurity Fundamentals</div>
+                    <div class="cert-issuer">Acmegrade</div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Millennium Fellow</div>
+                    <div class="cert-issuer">UN Academic Impact 2024</div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">Design Assistant</div>
+                    <div class="cert-issuer">Zeitgeist Magazine 2024</div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-title">E-Yantra Robotics Competition</div>
+                    <div class="cert-issuer">IIT Bombay 2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
