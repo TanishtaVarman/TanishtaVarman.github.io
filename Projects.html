@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Tanishta Varman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #F5EDE4;
+            color: #3D3226;
+            line-height: 1.8;
+        }
+
+        /* === HEADER === */
+        .header {
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #2D2519;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            color: #5D4E3E;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #B89968;
+        }
+
+        /* === CONTENT === */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: #2D2519;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #5D4E3E;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        /* === PROJECTS GRID === */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(61, 50, 38, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(61, 50, 38, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #E8D5C4 0%, #D4C4B0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7D6E5D;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #2D2519;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #5D4E3E;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #F0E6DC;
+            color: #5D4E3E;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #B89968;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #A88858;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Tanishta Varman</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <div class="content">
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">A collection of my work in AI, web development, and cybersecurity</p>
+
+        <div class="projects-grid">
+            <!-- Sage Bot -->
+            <div class="project-card">
+                <div class="project-image">Sage Bot</div>
+                <div class="project-content">
+                    <h3 class="project-title">Sage Bot</h3>
+                    <p class="project-description">
+                        An AI-powered chatbot with natural language processing capabilities, designed to provide 
+                        intelligent responses and assist users with various queries using advanced NLP techniques.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">API Integration</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order -->
+            <div class="project-card">
+                <div class="project-image">Order</div>
+                <div class="project-content">
+                    <h3 class="project-title">Order - Forensic System</h3>
+                    <p class="project-description">
+                        A comprehensive digital forensic system designed to analyze and process evidence data. 
+                        Includes tools for data recovery, analysis, and reporting.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Port Scanner -->
+            <div class="project-card">
+                <div class="project-image">Port Scanner</div>
+                <div class="project-content">
+                    <h3 class="project-title">Advanced Port Scanner</h3>
+                    <p class="project-description">
+                        A network security tool for scanning and analyzing open ports on target systems. 
+                        Features multi-threaded scanning, service detection, and comprehensive reporting.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Network Security</span>
+                        <span class="tech-tag">Multi-threading</span>
+                        <span class="tech-tag">Wireshark</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Felis Classifier -->
+            <div class="project-card">
+                <div class="project-image">Felis Classifier</div>
+                <div class="project-content">
+                    <h3 class="project-title">Felis Taxonomy Classifier</h3>
+                    <p class="project-description">
+                        A machine learning model for classifying different species within the Felidae family. 
+                        Uses deep learning techniques for accurate species identification.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">CNN</span>
+                        <span class="tech-tag">Image Classification</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speech Recognition -->
+            <div class="project-card">
+                <div class="project-image">Speech Recognition</div>
+                <div class="project-content">
+                    <h3 class="project-title">Speech Recognition CNN</h3>
+                    <p class="project-description">
+                        A convolutional neural network for speech recognition, capable of transcribing audio 
+                        to text with high accuracy using advanced deep learning architectures.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">CNN</span>
+                        <span class="tech-tag">Audio Processing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electrical Grid -->
+            <div class="project-card">
+                <div class="project-image">Grid Prediction</div>
+                <div class="project-content">
+                    <h3 class="project-title">Electrical Grid Stability Prediction</h3>
+                    <p class="project-description">
+                        A machine learning model to predict electrical grid stability using various network 
+                        parameters. Helps prevent power outages and optimize grid performance.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Predictive Modeling</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
