@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills & Certifications - Tanishta Varman</title>
+    <title>Skills - Tanishta Varman</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,259 +15,323 @@
         }
 
         body {
-            font-family: 'Work Sans', sans-serif;
-            background-color: #F5EDE4;
-            color: #3D3226;
-            line-height: 1.8;
-        }
-
-        /* === HEADER === */
-        .header {
-            padding: 2rem 3rem;
+            font-family: 'Inter', sans-serif;
+            background: #1a0a10;
+            color: #f5d5e0;
+            line-height: 1.6;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            min-height: 100vh;
         }
 
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: #2D2519;
-            text-decoration: none;
+        /* Fixed Sidebar */
+        .sidebar {
+            width: 320px;
+            background: #0d0508;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid rgba(232, 128, 154, 0.1);
+        }
+
+        .sidebar-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #f5d5e0;
+            margin-bottom: 0.5rem;
             font-weight: 400;
-            letter-spacing: 1px;
+            line-height: 1.2;
         }
 
-        .back-link {
-            color: #5D4E3E;
-            text-decoration: none;
+        .sidebar-header .subtitle {
+            color: #E8809A;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #B89968;
-        }
-
-        /* === CONTENT === */
-        .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 3rem;
-        }
-
-        .page-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            color: #2D2519;
+            font-weight: 500;
+            letter-spacing: 1px;
             margin-bottom: 1rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-align: center;
         }
 
-        .page-subtitle {
-            text-align: center;
-            color: #5D4E3E;
-            font-size: 1.1rem;
-            margin-bottom: 5rem;
+        .sidebar-header .bio {
+            color: rgba(245, 213, 224, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.7;
             font-weight: 300;
         }
 
-        /* === SKILLS SECTION === */
-        .section-heading {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: #2D2519;
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-            text-align: center;
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: auto;
         }
 
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(245, 213, 224, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-weight: 300;
+        }
+
+        .nav-item.active {
+            color: #E8809A;
+        }
+
+        .nav-item .line {
+            width: 30px;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item.active .line {
+            width: 60px;
+        }
+
+        .nav-item:hover {
+            color: #E8809A;
+        }
+
+        .sidebar-socials {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .sidebar-socials a {
+            color: rgba(245, 213, 224, 0.5);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .sidebar-socials a:hover {
+            color: #E8809A;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 3rem 4rem;
+            max-width: 1100px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #E8809A;
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: rgba(245, 213, 224, 0.9);
+            margin: 3rem 0 1.5rem;
+            font-weight: 400;
+        }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .skill-box {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(61, 50, 38, 0.08);
+            background: rgba(45, 21, 32, 0.4);
+            border: 1px solid rgba(232, 128, 154, 0.2);
+            padding: 2rem;
             transition: all 0.3s ease;
         }
 
         .skill-box:hover {
+            border-color: #E8809A;
+            background: rgba(45, 21, 32, 0.6);
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(61, 50, 38, 0.12);
         }
 
         .skill-box h4 {
-            font-family: 'Cormorant Garamond', serif;
-            color: #B89968;
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
+            color: #E8809A;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
             font-weight: 500;
+            font-family: 'Playfair Display', serif;
         }
 
         .skill-box p {
-            color: #5D4E3E;
-            font-size: 1rem;
-            line-height: 1.8;
+            color: rgba(245, 213, 224, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
-        /* === CERTIFICATIONS === */
-        .cert-container {
-            background: white;
-            padding: 3.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(61, 50, 38, 0.08);
-        }
-
-        .cert-container h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: #2D2519;
-            margin-bottom: 2rem;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
+        /* Certifications */
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .cert-item {
+            background: rgba(45, 21, 32, 0.3);
+            border-left: 3px solid #E8809A;
             padding: 1.5rem;
-            background: #F9F5F0;
-            border-radius: 8px;
-            border-left: 4px solid #B89968;
             transition: all 0.3s ease;
         }
 
         .cert-item:hover {
-            background: #F5EDE4;
-            transform: translateX(5px);
+            background: rgba(45, 21, 32, 0.5);
+            transform: translateX(10px);
         }
 
         .cert-title {
-            color: #2D2519;
-            font-weight: 500;
+            color: #E8809A;
             font-size: 1.05rem;
-            margin-bottom: 0.5rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
         }
 
         .cert-issuer {
-            color: #7D6E5D;
-            font-size: 0.9rem;
+            color: rgba(245, 213, 224, 0.5);
+            font-size: 0.85rem;
             font-style: italic;
+            font-weight: 300;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .page-title {
-                font-size: 2.5rem;
+            body {
+                flex-direction: column;
             }
 
-            .section-heading {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 2rem 1.5rem;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .sidebar-header h1 {
                 font-size: 2rem;
-            }
-
-            .content {
-                padding: 3rem 1.5rem;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-container {
-                padding: 2rem;
-            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <a href="index.html" class="logo">Tanishta Varman</a>
-        <a href="index.html" class="back-link">← Back to Home</a>
-    </header>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Tanishta<br>Varman</h1>
+            <div class="subtitle">CS Student & Builder</div>
+            <div class="bio">I build thoughtful digital things — from AI models to security tools.</div>
+        </div>
 
-    <div class="content">
+        <nav class="sidebar-nav">
+            <a href="about.html" class="nav-item">
+                <div class="line"></div>
+                <span>About</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+                <div class="line"></div>
+                <span>Projects</span>
+            </a>
+            <a href="skills.html" class="nav-item active">
+                <div class="line"></div>
+                <span>Skills</span>
+            </a>
+            <a href="index.html#contact" class="nav-item">
+                <div class="line"></div>
+                <span>Contact</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-socials">
+            <a href="mailto:tanishta.varman@gmail.com">📧</a>
+            <a href="https://github.com/TanishtaVarman" target="_blank">💻</a>
+            <a href="https://linkedin.com/in/tanishta-varman" target="_blank">💼</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
         <h1 class="page-title">Skills & Certifications</h1>
-        <p class="page-subtitle">Technical expertise and professional development</p>
 
-        <!-- SKILLS -->
         <h2 class="section-heading">Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-box">
                 <h4>Languages</h4>
                 <p>Python, C, C++, JavaScript, SQL, HTML, CSS, Node.js</p>
             </div>
-            
+
             <div class="skill-box">
                 <h4>Frameworks</h4>
                 <p>React.js, Express.js, TensorFlow, Firebase, Scikit-Learn</p>
             </div>
-            
+
             <div class="skill-box">
                 <h4>Tools</h4>
                 <p>Git/GitHub, Vite, Google Colab, Wireshark</p>
             </div>
-            
+
             <div class="skill-box">
                 <h4>Specializations</h4>
                 <p>Machine Learning, Deep Learning, Network Security, API Integration</p>
             </div>
         </div>
 
-        <!-- CERTIFICATIONS & ACHIEVEMENTS -->
         <h2 class="section-heading">Certifications & Achievements</h2>
-        <div class="cert-container">
-            <div class="cert-grid">
-                <div class="cert-item">
-                    <div class="cert-title">Machine Learning Specialization</div>
-                    <div class="cert-issuer">Stanford University / DeepLearning.AI</div>
-                </div>
+        <div class="cert-list">
+            <div class="cert-item">
+                <div class="cert-title">Machine Learning Specialization</div>
+                <div class="cert-issuer">Stanford University / DeepLearning.AI</div>
+            </div>
 
-                <div class="cert-item">
-                    <div class="cert-title">Generative AI Fundamentals</div>
-                    <div class="cert-issuer">LinkedIn Learning</div>
-                </div>
+            <div class="cert-item">
+                <div class="cert-title">Generative AI Fundamentals</div>
+                <div class="cert-issuer">LinkedIn Learning</div>
+            </div>
 
-                <div class="cert-item">
-                    <div class="cert-title">Cybersecurity Fundamentals</div>
-                    <div class="cert-issuer">Acmegrade</div>
-                </div>
+            <div class="cert-item">
+                <div class="cert-title">Cybersecurity Fundamentals</div>
+                <div class="cert-issuer">Acmegrade</div>
+            </div>
 
-                <div class="cert-item">
-                    <div class="cert-title">Millennium Fellow</div>
-                    <div class="cert-issuer">UN Academic Impact 2024</div>
-                </div>
+            <div class="cert-item">
+                <div class="cert-title">Millennium Fellow</div>
+                <div class="cert-issuer">UN Academic Impact 2024</div>
+            </div>
 
-                <div class="cert-item">
-                    <div class="cert-title">Design Assistant</div>
-                    <div class="cert-issuer">Zeitgeist Magazine 2024</div>
-                </div>
+            <div class="cert-item">
+                <div class="cert-title">Design Assistant</div>
+                <div class="cert-issuer">Zeitgeist Magazine 2024</div>
+            </div>
 
-                <div class="cert-item">
-                    <div class="cert-title">E-Yantra Robotics Competition</div>
-                    <div class="cert-issuer">IIT Bombay 2023</div>
-                </div>
+            <div class="cert-item">
+                <div class="cert-title">E-Yantra Robotics Competition</div>
+                <div class="cert-issuer">IIT Bombay 2023</div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
