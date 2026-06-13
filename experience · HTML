@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience & Skills — Tanishta Varman</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <nav>
+      <a href="about.html">About Me</a>
+      <a href="gallery.html">Projects</a>
+      <a href="experience.html" class="active">Experience &amp; Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </aside>
+
+  <main class="content about-content">
+
+    <div class="about-grid">
+      <div class="about-images">
+        <img src="img/exp-1.jpg" alt="Workspace image one">
+        <img src="img/exp-2.jpg" alt="Workspace image two">
+      </div>
+
+      <div class="about-text">
+        <h2>Experience</h2>
+        <div class="entry">
+          <p class="role">Associate Creative Director</p>
+          <p class="meta">2021–present, Studio Rallia</p>
+        </div>
+        <div class="entry">
+          <p class="role">Photographer</p>
+          <p class="meta">2017–2021, Studio Rallia</p>
+        </div>
+
+        <h2>Education</h2>
+        <div class="entry">
+          <p class="role">MA in Professional Photography</p>
+          <p class="meta">2025, Venston Bay Art Institute</p>
+        </div>
+        <div class="entry">
+          <p class="role">BA in Advertising</p>
+          <p class="meta">2017, University of Falworth</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
