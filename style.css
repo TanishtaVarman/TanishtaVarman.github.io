@@ -45,6 +45,11 @@ body {
   transition: opacity 0.2s ease;
 }
 
+.home-page .sidebar nav a {
+  font-size: 1.3rem;
+}
+
+
 .sidebar nav a:hover,
 .sidebar nav a.active {
   opacity: 0.5;
@@ -74,7 +79,7 @@ h1, h2 {
   letter-spacing: 0.05em;
 }
 
-.home-content {
+
   display: flex;
   align-items: center;
   justify-content: center;
