@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+:root {
+  --font-body: 'Jost', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+
+  --bg-light: #e7e4e6;
+  --bg-dark: #0d0d0d;
+  --text-dark: #1a1a1a;
+  --text-light: #f5f5f5;
+  --text-muted: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-light);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ===== Sidebar Nav ===== */
+.sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sidebar nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #aaa;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  opacity: 0.5;
+}
+
+.sidebar .name-block {
+  margin-top: auto;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  line-height: 1.15;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ===== Main content ===== */
+.content {
+  flex: 1;
+  padding: 60px;
+  overflow-y: auto;
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-name {
+  font-size: 7rem;
+  line-height: 1.05;
+  letter-spacing: 0.12em;
+  text-align: left;
+}
+
+/* ===== About page ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-images img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 480px;
+}
+
+.about-text h2 {
+  font-size: 2.3rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.entry { margin-bottom: 18px; }
+.entry .role { font-size: 1.05rem; font-weight: 500; }
+.entry .meta { font-size: 0.95rem; color: var(--text-muted); font-weight: 600; }
+
+/* ===== Gallery page ===== */
+.gallery-content h1 {
+  font-size: 4rem;
+  margin-bottom: 50px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+  align-items: start;
+}
+
+.g-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.g-item.g-tall img { height: 480px; }
+.g-item img { height: 260px; }
+.g-item.g-wide img { height: 320px; }
+
+.g-item figcaption {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ===== Contact page ===== */
+.contact-content { padding: 0; display: flex; align-items: center; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100vh;
+}
+
+.contact-text {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-text h1 {
+  font-size: 5rem;
+  line-height: 1.05;
+  margin-bottom: 60px;
+}
+
+.contact-block { margin-bottom: 30px; }
+.contact-block .label { font-size: 1.2rem; margin-bottom: 6px; }
+.contact-block .value { font-size: 1.15rem; word-break: break-all; }
+
+.collabs {
+  margin-top: 60px;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; height: auto; }
+  .contact-image img { height: 300px; }
+  .contact-text h1 { font-size: 2.8rem; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+
+  .about-grid { grid-template-columns: 1fr; }
+
+  .big-name { font-size: 2.8rem; }
+
+  body { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 30px; }
+  .sidebar .name-block { width: 100%; margin-top: 20px; font-size: 1.8rem; }
+  .sidebar nav { display: flex; gap: 20px; flex-wrap: wrap; }
+  .sidebar nav a { border-bottom: none; padding-bottom: 0; font-size: 0.85rem; }
+}
